@@ -3,7 +3,7 @@
 #use the data to create a graph
 
 # import requests
-# import json
+import json
 # import matplotlib.pyplot as plt
 # import numpy as np
 # import pandas as pd
@@ -18,11 +18,13 @@ app = Flask(__name__)
 @app.route('/csgoAna')
 def get_stats():
 
-    # new_user = User('jdb', 'testIMGstring', 'testURLString', 'now')
-    # JSON_user = jsonify.dumps(new_user.__dict__)
-    # return JSON_user
-    return 'hello world'
+    new_user = User('jdb', 'testIMGstring', 'testURLString', 'now')
+
+    JSON_user = json.dumps(new_user.__dict__)
     
+    return JSON_user
+    
+get_stats()
 
 if __name__ == '__main__' :
     app.run()
